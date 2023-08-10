@@ -202,10 +202,10 @@ export default function SongTable({ songs }) {
 
   return (
     <>
-      <header className="sticky top-0 bg-white w-full space-y-4 p-4 pl-[10%]">
-        <div className="my-5 flex sm:flex-row flex-col">
-          <div className="flex flex-row mb-1 sm:mb-0">
-            <div className="relative">
+      <header className="sticky top-0 bg-white w-full space-y-4 p-4 pl-5 md:pl-[10%]">
+        <div className="my-5 flex flex-wrap">
+          <div className="flex flex-row mb-1">
+            <div className="relative min-w-max">
               <select
                 onChange={handleFilterDecade}
                 value={activeDecade}
@@ -227,7 +227,7 @@ export default function SongTable({ songs }) {
               </div>
             </div>
           </div>
-          <div className="block relative w-1/2">
+          <div className="block relative sm:min-w-[82%] md:min-w-[80%] lg:min-w-[50%] mb-1">
             <span className="h-full absolute inset-y-0 left-0 flex items-center pl-2">
               <MagnifyingGlassIcon className="h-5 w-5" />
             </span>
@@ -238,7 +238,7 @@ export default function SongTable({ songs }) {
               className="appearance-none text-xl rounded-r rounded-l border border-gray-400 border-b block pl-8 pr-6 py-2 w-full bg-white placeholder-gray-400 text-gray-700"
             />
           </div>
-          <div className="block relative pl-5 ">
+          <div className="block min-w-max relative mb-1 pl-0 pr-1 lg:pr-5 lg:pl-5">
             <a
               onClick={handleReset}
               className="hover:bg-red-400 hover:cursor-pointer group flex items-center rounded-md bg-red-500 text-white text-xl font-medium pl-2 pr-3 py-2 shadow-sm"
@@ -246,18 +246,18 @@ export default function SongTable({ songs }) {
               <XMarkIcon className="h-6 w-6 pr-2" /> Reset
             </a>
           </div>
-          <div className="block relative px-5">
+          <div className="block min-w-max relative">
             <a
               onClick={handleRandom}
               className="hover:bg-blue-400 hover:cursor-pointer group flex items-center rounded-md bg-blue-500 text-white text-xl font-medium pl-2 pr-3 py-2 shadow-sm"
             >
-              <QuestionMarkCircleIcon className="h-6 w-6 pr-2" /> Random Song
+              <QuestionMarkCircleIcon className="h-6 w-6 pr-2" /> Random
             </a>
           </div>
         </div>
       </header>
-      <div className="border rounded-lg mb-20 min-w-[90%]">
-        <table className="rounded-mdtable-auto w-full text-sm text-left text-gray-500">
+      <div className="border rounded-lg mb-20 min-w-[90%] min-h-[500px]">
+        <table className="rounded-md table-auto text-sm text-left text-gray-500 w-full">
           <thead className="text-xl text-gray-700 uppercase bg-sky-50">
             <tr>
               <th scope="col" className="px-6 py-3 w-1/2">
