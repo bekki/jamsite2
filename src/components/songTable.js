@@ -126,7 +126,7 @@ export default function SongTable({ songs }) {
     }
 
     setVisibleSongs(updatedSongs);
-  }
+  };
 
   const handleTitleSort = (event) => {
     event.preventDefault();
@@ -174,6 +174,11 @@ export default function SongTable({ songs }) {
     setActiveSearch("");
     setRandomIndex(null);
     refreshSongs();
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   const handleRandom = (event) => {
@@ -184,15 +189,14 @@ export default function SongTable({ songs }) {
 
   React.useEffect(() => {
     refreshSongs();
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeSort, activeDecade, activeSearch]);
 
   React.useEffect(() => {
     const elem = document.getElementById("random");
     if (elem) {
-      window.scrollTo({
-        top: elem?.getBoundingClientRect().top-200,
-        behavior: "smooth",
-      });
+      elem.scrollIntoView({ behavior: "smooth", block: "center" });
     }
   }, [randomIndex]);
 

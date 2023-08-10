@@ -34,4 +34,5 @@ SPREADSHEET_ID="1yGF1CY-obfm5QWiVhvvBoN5XYtQe902hs1np6b6G9Ag"
 ```
 
 ### Starting up
+
 Now you're ready to go! Enter `npm run dev` from the root directory and you should be able to access the app on `http://localhost:3000`

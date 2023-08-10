@@ -10,7 +10,11 @@ export default function TableBody({ songs, randomIndex }) {
             key={song.uuid}
             id={i === randomIndex ? "random" : undefined}
             className={`text-xl ${
-              i === randomIndex ? "bg-amber-100" : (i % 2 === 0 ? "bg-white" : "bg-gray-100")
+              i === randomIndex
+                ? "bg-amber-100"
+                : i % 2 === 0
+                ? "bg-white"
+                : "bg-gray-100"
             } border-b hover:bg-sky-50`}
           >
             <td className="px-6 py-4 w-1/2">

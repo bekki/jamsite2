@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "deploy": "aws s3 sync out/. s3://songs.bekkijam.com",
-    "lint:prettier": "prettier . --write"
+    "prettier": "prettier . --write"
   },
   "dependencies": {
     "@google-cloud/local-auth": "^2.1.0",
