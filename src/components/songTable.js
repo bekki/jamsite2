@@ -20,20 +20,32 @@ export default function SongTable({ songs }) {
   const [activeSearch, setActiveSearch] = React.useState("");
   const [randomIndex, setRandomIndex] = React.useState(null);
 
+  const stripString = (str) => {
+    return str.replace(/[()'"’#:-]/g, "");
+  };
+
   const sortByTitleAsc = (a, b) => {
-    return a.title.localeCompare(b.title);
+    const aTitle = stripString(a.title);
+    const bTitle = stripString(b.title);
+    return aTitle.localeCompare(bTitle);
   };
 
   const sortByTitleDesc = (a, b) => {
-    return b.title.localeCompare(a.title);
+    const aTitle = stripString(a.title);
+    const bTitle = stripString(b.title);
+    return bTitle.localeCompare(aTitle);
   };
 
   const sortByArtistAsc = (a, b) => {
-    return a.artist.localeCompare(b.artist);
+    const aArtist = stripString(a.artist);
+    const bArtist = stripString(b.artist);
+    return aArtist.localeCompare(bArtist);
   };
 
   const sortByArtistDesc = (a, b) => {
-    return b.artist.localeCompare(a.artist);
+    const aArtist = stripString(a.artist);
+    const bArtist = stripString(b.artist);
+    return bArtist.localeCompare(aArtist);
   };
 
   const sortByYearAsc = (a, b) => {
